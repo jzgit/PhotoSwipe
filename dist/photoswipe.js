@@ -423,6 +423,9 @@ var _isOpen,
 		return _listeners[name].push(fn);
 	},
 	_shout = function(name) {
+		if (!_listeners) {
+                	return false;
+		}
 		var listeners = _listeners[name];
 
 		if(listeners) {
